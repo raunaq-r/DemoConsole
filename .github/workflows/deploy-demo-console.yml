@@ -6,7 +6,7 @@ on:
       - "demo-console/v*"
 
 env:
-  PROJECT_PATH: DemoConsole/DemoConsoleApp.csproj
+  PROJECT_PATH: DemoConsoleApp/DemoConsoleApp.csproj
 
 jobs:
   deploy:
