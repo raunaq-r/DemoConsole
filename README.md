@@ -1,5 +1,5 @@
 # DemoConsole
-.NET 8 console app which returns exit code
+Demo to show self hosted github runners in mac and deploy using github actions
 
 ## This is built in mac with apple silicon
 Build using
