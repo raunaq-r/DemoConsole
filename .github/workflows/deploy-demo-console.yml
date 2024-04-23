@@ -36,6 +36,6 @@ jobs:
       
       - uses: csexton/release-asset-action@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           pattern: DemoConsoleApp/bin/Release/net8.0/osx-arm64/publish/*
           release-url: ${{ steps.create_release.outputs.upload_url }}
