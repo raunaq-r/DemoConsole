@@ -34,8 +34,8 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
       
-      - uses: csexton/release-asset-action@v2
+      - uses: csexton/release-asset-action@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           pattern: DemoConsoleApp/bin/Release/net8.0/osx-arm64/publish/*
           release-url: ${{ steps.create_release.outputs.upload_url }}
