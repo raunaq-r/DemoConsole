@@ -1,0 +1,29 @@
+name: "Deploy DemoConsole"
+
+on:
+  push:
+    tags:
+      - "demo-console/v*"
+
+env:
+  PROJECT_PATH: DemoConsole/DemoConsoleApp.csproj
+
+jobs:
+  deploy:
+    runs-on:
+      - macOS
+      - label-1
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - run: dotnet restore ${{ env.PROJECT_PATH }}
+
+      - run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
+
+      - run: dotnet publish ${{ env.PROJECT_PATH }} -c Release -r osx-arm64 -p:PublishSingleFile=true
+
+      
